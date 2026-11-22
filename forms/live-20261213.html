@@ -46,9 +46,10 @@
       Google Formsへ送信する場合は、actionのFORM_IDと各name="entry.XXXXXXXX"を、
       実際のフォームの送信先URL・エントリーIDへ置き換える。
     -->
-    <form id="reservation-form" class="reservation-form" action="https://script.google.com/macros/s/AKfycby-CvXUawfa8WCzTHIeeXSNbjA0bePQ1bic5wgVBt9p93a-QFbZYsMehaFPYDpMuF_m/exec" method="post">
+    <form id="reservation-form" class="reservation-form" action="https://script.google.com/macros/s/AKfycbyg3DZTbB15Wgn3LzgsroQPNp1BYnyZCbD8CuPE9KRaO6XijBAjTRuG4fvkHWnnaJ5W/exec" method="post">
 
     <!-- このライブ用の公演情報（送信時にGASへ渡す） -->
+    <input type="hidden" name="sheetName" value="2026-12-13_新栄ハートランド">
     <input type="hidden" name="eventTitle" value="HeartLand pre.HOMEGAME vol.20">
     <input type="hidden" name="eventDate" value="2026.12.13(日)">
     <input type="hidden" name="eventVenue" value="愛知県 新栄ハートランド">
@@ -105,28 +106,25 @@
   const messageEl = document.getElementById("form-message");
 
   form.addEventListener("submit", async (e) => {
-    e.preventDefault(); // Googleフォームの完了ページへ飛ばないようにする
+    e.preventDefault();
 
     submitBtn.disabled = true;
     submitBtn.textContent = "送信中...";
     messageEl.textContent = "";
 
-    const formData = new FormData(form);
+    const params = new URLSearchParams(new FormData(form));
 
     try {
       await fetch(form.action, {
         method: "POST",
-        mode: "no-cors", // Googleフォーム宛てのクロスオリジン送信に必要
-        body: formData,
+        mode: "no-cors",
+        body: params,
       });
 
-      // no-cors だと成否のステータスは読めないため、送信完了として表示
       form.reset();
       window.location.href = "./thanks.html";
-      messageEl.textContent = "予約を受け付けました！当日お会いできるのを楽しみにしています。";
     } catch (err) {
       messageEl.textContent = "送信に失敗しました。時間をおいて再度お試しいただくか、メールでご連絡ください。";
-    } finally {
       submitBtn.disabled = false;
       submitBtn.textContent = "予約を送信する";
     }
