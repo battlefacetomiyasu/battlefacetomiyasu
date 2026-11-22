@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>予約フォーム一覧</title>
+  <meta name="description" content="バンド関連の予約フォーム一覧です。">
+  <link rel="stylesheet" href="assets/css/style.css">
+<base target="_blank">
+</head>
+<body>
+  <header class="page-header">
+    <div class="container">
+      <p class="page-kicker">RESERVATION</p>
+      <h1>予約フォーム</h1>
+      <p class="page-lead">予約したいフォームを選んでください。各フォームで必要事項を入力して送信できます。</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="portal-section" aria-labelledby="available-forms">
+      <h2 id="available-forms">受付中のフォーム</h2>
+
+      <!--
+        新しいフォームを追加するときは、下の li をコピーして
+        href・公演名・説明文だけ差し替えてください。
+      -->
+      <ul class="form-list">
+        <li class="form-list-item">
+          <a class="form-list-link" href="forms/live-20261213.html">
+            <p class="form-list-meta">受付中</p>
+            <h3 class="form-list-title">予約フォーム</h3>
+            <p class="form-list-description">予約者情報、予約枚数を入力して、ライブへの参加予約を行います。</p>
+            <p class="form-list-action">フォームを開く</p>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <section class="portal-section" aria-labelledby="portal-note">
+      <h2 id="portal-note">予約について</h2>
+      <p class="portal-note">送信後、入力いただいたメールアドレスへ確認用の連絡をお送りします。受付状況や公演詳細については、各フォーム内の案内をご確認ください。</p>
+    </section>
+  </main>
+
+  <footer class="page-footer">
+    <div class="container">
+      <p>フォームで送信できない場合や、予約内容の変更がある場合は、主催者の連絡先(bftomiyasu@gmail.com)へ直接お問い合わせください。</p>
+    </div>
+  </footer>
+</body>
+</html>
