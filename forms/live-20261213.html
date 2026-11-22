@@ -47,7 +47,7 @@
       Google Formsへ送信する場合は、actionのFORM_IDと各name="entry.XXXXXXXX"を、
       実際のフォームの送信先URL・エントリーIDへ置き換える。
     -->
-    <form class="reservation-form" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSelsSGmGBs6QM5jqErUDJi_N91Kq5aBleQgoty9mkNzshut1A/formResponse" method="post">
+    <form id="reservation-form" class="reservation-form" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSelsSGmGBs6QM5jqErUDJi_N91Kq5aBleQgoty9mkNzshut1A/formResponse" method="post">
       <section class="form-section" aria-labelledby="guest-information">
 
         <div class="form-grid">
@@ -82,7 +82,8 @@
         </div>
       </section>
       <div class="form-actions">
-        <button type="submit">予約を送信する</button>
+        <button type="submit" id="submit-btn">予約を送信する</button>
+        <p id="form-message" class="submit-note" role="status" aria-live="polite"></p>
       </div>
     </form>
   </main>
@@ -94,3 +95,37 @@
   </footer>
 </body>
 </html>
+
+
+<script>
+  const form = document.getElementById("reservation-form");
+  const submitBtn = document.getElementById("submit-btn");
+  const messageEl = document.getElementById("form-message");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault(); // Googleフォームの完了ページへ飛ばないようにする
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = "送信中...";
+    messageEl.textContent = "";
+
+    const formData = new FormData(form);
+
+    try {
+      await fetch(form.action, {
+        method: "POST",
+        mode: "no-cors", // Googleフォーム宛てのクロスオリジン送信に必要
+        body: formData,
+      });
+
+      // no-cors だと成否のステータスは読めないため、送信完了として表示
+      form.reset();
+      messageEl.textContent = "予約を受け付けました！当日お会いできるのを楽しみにしています。";
+    } catch (err) {
+      messageEl.textContent = "送信に失敗しました。時間をおいて再度お試しいただくか、メールでご連絡ください。";
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = "予約を送信する";
+    }
+  });
+</script>
