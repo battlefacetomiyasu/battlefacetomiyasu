@@ -503,3 +503,45 @@ button:focus-visible,
     animation-iteration-count: 1 !important;
   }
 }
+
+/* Thanks page */
+.thanks-main {
+  padding-block: 2.25rem 3.5rem;
+}
+
+.thanks-message {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.8;
+}
+
+.thanks-sub {
+  margin: 0.75rem 0 0;
+  color: var(--color-subtext);
+  font-size: 0.875rem;
+}
+
+.thanks-actions {
+  margin-top: 2rem;
+}
+
+.thanks-close-btn {
+  min-width: 11rem;
+  min-height: 2.75rem;
+  padding: 0.5rem 1.25rem;
+  border: 1px solid var(--color-line-strong);
+  border-radius: 0;
+  background: var(--color-field);
+  color: var(--color-line-strong);
+  font-size: 0.875rem;
+  font-weight: 700;
+  transition:
+    background-color 140ms ease,
+    color 140ms ease;
+}
+
+.thanks-close-btn:hover {
+  background: var(--color-line-strong);
+  color: var(--color-field);
+}
