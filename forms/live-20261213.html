@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>バンドライブ予約フォーム</title>
+  <title>バトルフェイス富安_LIVE予約フォーム</title>
   <meta name="description" content="バンドライブの参加予約を行うためのフォームです。">
   <link rel="stylesheet" href="../assets/css/style.css">
 <base target="_blank">
@@ -12,12 +12,37 @@
   <header class="page-header">
     <div class="container">
       <p class="page-kicker">LIVE RESERVATION</p>
-      <h1>バンドライブ予約フォーム</h1>
-      <p class="page-lead">必要事項を入力して、予約を送信してください。確認のため、入力いただいたメールアドレスへ連絡いたします。</p>
+      <h1>HeartLand pre.HOMEGAME vol.20</h1>
+      <p class="page-lead">必要事項を入力して、予約を送信してください。</p>
     </div>
   </header>
 
   <main class="container">
+    <section class="event-info" aria-labelledby="event-heading">
+      <h2 id="event-heading" class="sr-only">公演情報</h2>
+      <dl class="event-meta">
+        <div class="event-meta-row">
+          <dt>公演日</dt>
+          <dd>2026.12.13(日)</dd>
+        </div>
+        <div class="event-meta-row">
+          <dt>開催場所</dt>
+          <dd>愛知県 新栄ハートランド</dd>
+        </div>
+        <div class="event-meta-row">
+          <dt>OPEN / START</dt>
+          <dd>17:30 / 18:00</dd>
+        </div>
+        <div class="event-meta-row">
+          <dt>出演</dt>
+          <dd>カモメカモネ / ADANARI / ノーリプ / Genthru / バトルフェイス富安 / as time goes on</dd>
+        </div>
+        <div class="event-meta-row">
+          <dt>チケット</dt>
+          <dd>前売り：￥2,400 / 当日：￥2,900 / Drink：￥600</dd>
+        </div>
+      </dl>
+    </section>
     <!--
       Google Formsへ送信する場合は、actionのFORM_IDと各name="entry.XXXXXXXX"を、
       実際のフォームの送信先URL・エントリーIDへ置き換える。
@@ -26,7 +51,7 @@
       <section class="form-section" aria-labelledby="guest-information">
         <h2 id="guest-information">予約者情報</h2>
 
-        <div class="form-grid form-grid--two-columns">
+        <div class="form-grid">
           <div class="form-field">
             <label for="guest-name">お名前 <span class="required-mark">必須</span></label>
             <input id="guest-name" name="entry.1076069704" type="text" autocomplete="name" placeholder="例：バトルフェイス富安" required>
@@ -58,14 +83,13 @@
       </section>
       <div class="form-actions">
         <button type="submit">予約を送信する</button>
-        <p class="submit-note">送信後、予約内容を確認するためのメールをお送りします。</p>
       </div>
     </form>
   </main>
 
   <footer class="page-footer">
     <div class="container">
-      <p>ご不明な点がある場合は、主催者の連絡先(bftomiyasu@gmail.com)へお問い合わせください。</p>
+      <p>ご不明な点がある場合は、bftomiyasu@gmail.com へお問い合わせください。</p>
     </div>
   </footer>
 </body>
