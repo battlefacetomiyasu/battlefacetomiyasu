@@ -13,39 +13,40 @@
     <div class="container">
       <p class="page-kicker">RESERVATION</p>
       <h1>予約フォーム</h1>
-      <p class="page-lead">予約したいライブを選んでください。</p>
+      <p class="page-lead">行くライブを選んで予約してください。</br>詳細は各フォームのページで確認できます。</p>
     </div>
   </header>
 
   <main class="container">
     <section class="portal-section" aria-labelledby="available-forms">
-      <h2 id="available-forms">受付中のフォーム</h2>
+      <h2 id="available-forms" class="live-heading"><span>LIVE</span> <span>SCHEDULE</span></h2>
 
       <!--
         新しいフォームを追加するときは、下の li をコピーして
-        href・公演名・説明文だけ差し替える。
+        href・日付・公演名・会場・備考だけ差し替える。
       -->
-      <ul class="form-list">
-        <li class="form-list-item">
-          <a class="form-list-link" href="forms/live-20261213.html">
-            <p class="form-list-meta"><b>！！！予約受付中！！！</b></p>
-            <h3 class="form-list-title">HeartLand pre.HOMEGAME vol.20</h3>
-            <p class="form-list-description">2026.12.13(日)／愛知県 新栄ハートランド</p>
-            <p class="form-list-action">予約する</p>
+      <ul class="live-list">
+        <li class="live-item">
+          <a class="live-link" href="forms/live-20261213.html">
+            <div class="live-date-col">
+              <span class="live-date">2026.12.13</span>
+              <span class="live-day">(SUN)</span>
+            </div>
+            <div class="live-body-col">
+              <p class="live-status">！！！予約受付中！！！</p>
+              <h3 class="live-title">HeartLand pre.HOMEGAME vol.20</h3>
+              <p class="live-venue">@ 愛知県 新栄ハートランド</p>
+            </div>
+            <span class="live-go">予約 →</span>
           </a>
         </li>
       </ul>
-    </section>
-
-    <section class="portal-section" aria-labelledby="portal-note">
-      <h2 id="portal-note">予約について</h2>
-      <p class="portal-note">受付状況や公演詳細については、各フォーム内の案内をご確認ください。</p>
     </section>
   </main>
 
   <footer class="page-footer">
     <div class="container">
-      <p>フォームで送信できない場合や、予約内容の変更がある場合は、主催者の連絡先(bftomiyasu@gmail.com)へ直接お問い合わせください。</p>
+      <p>送信できない場合や変更の連絡は、バトルフェイス富安の各種SNSや下記メールアドレスまで！<br>mail：bftomiyasu@gmail.com</p>
     </div>
   </footer>
 </body>
