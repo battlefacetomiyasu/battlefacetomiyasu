@@ -630,9 +630,10 @@ button:focus-visible,
   color: var(--color-subtext);
 }
 
-/* 3) 曜日の色分け */
-.live-day--sun { color: #b83b24; }
-.live-day--sat { color: #3a5a9b; }
+/* 曜日の色分け：3パターン */
+.live-day--sun { color: #b83b24; }  /* 日曜：赤 */
+.live-day--sat { color: #3a5a9b; }  /* 土曜：青 */
+.live-day--weekday { color: var(--color-subtext); }  /* 平日：グレー（デフォルトと同じ） */
 
 /* 4) 日付を大きく & 項目間の余白を広げる */
 .live-link {
