@@ -545,3 +545,101 @@ button:focus-visible,
   background: var(--color-line-strong);
   color: var(--color-field);
 }
+
+/* 一覧へ戻るリンク */
+.back-to-portal {
+  margin: 0 0 1rem;
+}
+
+.back-link {
+  display: inline-block;
+  min-height: 2.75rem;
+  padding: 0.45rem 1.1rem;
+  border: 1px solid var(--color-line-strong);
+  background: var(--color-field);
+  color: var(--color-line-strong);
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition:
+    background-color 140ms ease,
+    color 140ms ease;
+}
+
+.back-link:hover {
+  background: var(--color-line-strong);
+  color: var(--color-field);
+}
+
+.back-link:focus-visible {
+  outline: 1.5px solid var(--color-line-strong);
+  outline-offset: 3px;
+}
+
+/* フライヤー画像 */
+.event-flyer {
+  margin: 1.5rem 0 0;
+}
+
+.event-flyer img {
+  display: block;
+  width: min(100%, 22rem);
+  height: auto;
+  border: 1px solid var(--color-line);
+}
+
+/* 小さい画面: 戻るボタンは全幅 */
+@media (max-width: 42rem) {
+  .back-link {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* 1) 月グループ見出し（sticky） */
+.live-month {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  margin: 2rem 0 0;
+  padding: 0.5rem 0;
+  background: var(--color-bg);
+  border-bottom: 1.5px solid var(--color-line-strong);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.live-month:first-of-type {
+  margin-top: 0;
+}
+
+.live-month + .live-list {
+  margin-top: 0;
+}
+
+/* 2) ステータスを枠つきバッジに */
+.live-status {
+  padding: 0.1rem 0.5rem;
+  color: #b83b24;
+  letter-spacing: 0.06em;
+}
+
+/* 受付終了時はグレーにする運用も想定 */
+.live-status--closed {
+  border-color: var(--color-line);
+  color: var(--color-subtext);
+}
+
+/* 3) 曜日の色分け */
+.live-day--sun { color: #b83b24; }
+.live-day--sat { color: #3a5a9b; }
+
+/* 4) 日付を大きく & 項目間の余白を広げる */
+.live-link {
+  padding-block: 1.5rem;
+}
+
+.live-date {
+  font-size: 1.25rem;
+}
